@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://doyqco3yyhrkj"
+path="res://.godot/imported/Bush 1 x.mp3-8be51ddd9f509750215b6669c05d4521.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Bush 1 x.mp3"
+dest_files=["res://.godot/imported/Bush 1 x.mp3-8be51ddd9f509750215b6669c05d4521.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

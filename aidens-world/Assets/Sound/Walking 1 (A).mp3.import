@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cicmth8cmnd2n"
+path="res://.godot/imported/Walking 1 (A).mp3-382be768a3b8c815a276fc8a9a1114f5.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Walking 1 (A).mp3"
+dest_files=["res://.godot/imported/Walking 1 (A).mp3-382be768a3b8c815a276fc8a9a1114f5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
