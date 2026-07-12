@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bel3umnpxggoe"
+path="res://.godot/imported/door_lock 2.wav-0e2ab9c2bcccbdf4f147210c31a54f8c.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Sounds Mike/door_lock 2.wav"
+dest_files=["res://.godot/imported/door_lock 2.wav-0e2ab9c2bcccbdf4f147210c31a54f8c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

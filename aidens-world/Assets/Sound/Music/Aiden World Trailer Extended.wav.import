@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2y2vb80k3hsp"
+path="res://.godot/imported/Aiden World Trailer Extended.wav-a8df16756bafa652c5ca73deaab0e032.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Aiden World Trailer Extended.wav"
+dest_files=["res://.godot/imported/Aiden World Trailer Extended.wav-a8df16756bafa652c5ca73deaab0e032.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

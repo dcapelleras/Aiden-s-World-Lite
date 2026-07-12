@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://5xfl4s2p7ij5"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_nvotg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1tbnv"]
+
+[sub_resource type="Sky" id="Sky_1tbnv"]
+
+[sub_resource type="Environment" id="Environment_nvotg"]
+background_mode = 2
+sky = SubResource("Sky_1tbnv")
+
+[node name="Node3D" type="Node3D" unique_id=1101474948]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1293145020]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1309957191]
+shape = SubResource("WorldBoundaryShape3D_nvotg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1902798959]
+transform = Transform3D(9.985131, 0, 0, 0, 1, 0, 0, 0, 9.977714, 0, 0, 0)
+mesh = SubResource("PlaneMesh_1tbnv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2126992825]
+transform = Transform3D(1, 0, 0, 0, -0.20021358, 0.97975236, 0, -0.97975236, -0.20021358, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2051030056]
+environment = SubResource("Environment_nvotg")
