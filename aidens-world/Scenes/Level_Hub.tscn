@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://5xfl4s2p7ij5"]
 
+[ext_resource type="PackedScene" uid="uid://gxwln24d7ucv" path="res://Assets/Props/Characters/Aiden/aiden_sin_gorro.tscn" id="1_6mnrr"]
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_nvotg"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1tbnv"]
@@ -26,3 +28,6 @@ transform = Transform3D(1, 0, 0, 0, -0.20021358, 0.97975236, 0, -0.97975236, -0.
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2051030056]
 environment = SubResource("Environment_nvotg")
+
+[node name="Aiden_SinGorro" parent="." unique_id=1811757919 instance=ExtResource("1_6mnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2348545, 0, 3.2474685)

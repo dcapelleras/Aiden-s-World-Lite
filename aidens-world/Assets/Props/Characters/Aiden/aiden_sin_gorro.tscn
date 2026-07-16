@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://gxwln24d7ucv"]
+
+[ext_resource type="PackedScene" uid="uid://70aeddcq5g7q" path="res://Assets/Props/Characters/Aiden/Aiden_SinGorro.fbx" id="1_dnfmt"]
+[ext_resource type="Script" uid="uid://rgfbjsrmk1rg" path="res://Assets/Props/Characters/Aiden/aiden_sin_gorro.gd" id="2_wmlun"]
+
+[node name="Aiden_SinGorro" unique_id=1811757919 instance=ExtResource("1_dnfmt")]
+script = ExtResource("2_wmlun")
+
+[node name="Camera3D" type="Camera3D" parent="." index="2" unique_id=1460891628]
+transform = Transform3D(-0.9954112, 0, -0.09568944, 0, 1, 0, 0.09568944, 0, -0.9954112, 0, 1.6241722, -2.895454)
