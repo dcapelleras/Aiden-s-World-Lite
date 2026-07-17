@@ -5,6 +5,9 @@ extends CharacterBody3D
 @export var rotation_speed: float = 10.0 # How fast the character turns
 @export var mouse_sensitivity: float = 0.003
 
+@export var jump_velocity: float = 4.5 # Initial upward force
+var wants_to_jump: bool = false       # Input flag
+
 # Node References
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var spring_arm: SpringArm3D = $CameraPivot/SpringArm3D
@@ -23,12 +26,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		# Rotate the pivot horizontally (Left/Right)
 		camera_pivot.rotate_y(-event.relative.x * mouse_sensitivity)
-		
 		# Rotate the spring arm vertically (Up/Down)
 		spring_arm.rotate_x(-event.relative.y * mouse_sensitivity)
-		
 		# Clamp the camera boom angle so it doesn't flip upside down
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-60), deg_to_rad(30))
+		
+	if event.is_action_pressed("ui_jump"):
+		wants_to_jump = true
+
 
 func _physics_process(delta: float) -> void:
 	# 1. Clean Gravity Handling
@@ -39,6 +44,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = -0.1 
 
+	if wants_to_jump:# and is_on_floor():
+		# Always reset the input flag in the physics step so it doesn't float around
+		wants_to_jump = false
+		velocity.y = jump_velocity
+	
 	# 2. Get WASD Input Direction
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
