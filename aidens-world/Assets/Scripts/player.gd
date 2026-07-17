@@ -58,9 +58,9 @@ func _physics_process(delta: float) -> void:
 		var target_angle = atan2(-direction.x, -direction.z)
 		visuals.rotation.y = lerp_angle(visuals.rotation.y, target_angle, rotation_speed * delta)
 	else:
-		# Smoothly slide to a stop when no keys are pressed
-		velocity.x = move_toward(velocity.x, 0, acceleration * delta)
-		velocity.z = move_toward(velocity.z, 0, acceleration * delta)
+		
+		velocity.x = 0
+		velocity.z = 0
 
 	# 5. Move execution
 	move_and_slide()
