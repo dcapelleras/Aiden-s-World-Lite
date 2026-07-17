@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://5xfl4s2p7ij5"]
 
 [ext_resource type="PackedScene" uid="uid://gxwln24d7ucv" path="res://Assets/Props/Characters/Aiden/aiden_sin_gorro.tscn" id="1_6mnrr"]
+[ext_resource type="Script" uid="uid://bk0v8r8on2yv5" path="res://Assets/Scripts/player.gd" id="1_6uoul"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_nvotg"]
 
@@ -11,6 +12,8 @@
 [sub_resource type="Environment" id="Environment_nvotg"]
 background_mode = 2
 sky = SubResource("Sky_1tbnv")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1tbnv"]
 
 [node name="Node3D" type="Node3D" unique_id=1101474948]
 
@@ -29,5 +32,25 @@ transform = Transform3D(1, 0, 0, 0, -0.20021358, 0.97975236, 0, -0.97975236, -0.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2051030056]
 environment = SubResource("Environment_nvotg")
 
-[node name="Aiden_SinGorro" parent="." unique_id=1811757919 instance=ExtResource("1_6mnrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2348545, 0, 3.2474685)
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=911097318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.084266, 0)
+script = ExtResource("1_6uoul")
+
+[node name="visuals" type="Node3D" parent="CharacterBody3D" unique_id=835060378]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Aiden_SinGorro" parent="CharacterBody3D/visuals" unique_id=1811757919 instance=ExtResource("1_6mnrr")]
+
+[node name="CameraPivot" type="Node3D" parent="CharacterBody3D" unique_id=956692028]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D/CameraPivot" unique_id=786157439]
+transform = Transform3D(1, 6.3043077e-09, 2.2760815e-10, -6.3043077e-09, 0.99739647, 0.07211287, 2.2760815e-10, -0.07211287, 0.99739647, 0, 0.9986589, 0)
+spring_length = 4.01
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/CameraPivot/SpringArm3D" unique_id=358993815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86805177, -1.171428)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1466874409]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.67183805, 0)
+shape = SubResource("CapsuleShape3D_1tbnv")
