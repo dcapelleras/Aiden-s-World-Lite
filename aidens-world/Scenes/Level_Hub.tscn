@@ -1,56 +1,7 @@
 [gd_scene format=4 uid="uid://5xfl4s2p7ij5"]
 
-[ext_resource type="PackedScene" uid="uid://gxwln24d7ucv" path="res://Assets/Props/Characters/Aiden/aiden_sin_gorro.tscn" id="1_6mnrr"]
-[ext_resource type="Script" uid="uid://bk0v8r8on2yv5" path="res://Assets/Scripts/player.gd" id="1_6uoul"]
 [ext_resource type="Material" uid="uid://bwsd4sx8kdvfu" path="res://Assets/Building/M_Grass.tres" id="1_qlglt"]
-[ext_resource type="Animation" uid="uid://dbhpjtfpup88j" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_A.res" id="4_e4nke"]
-[ext_resource type="Animation" uid="uid://cbl8b8lar6tve" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_001_Scene.res" id="5_37v2a"]
-[ext_resource type="Animation" uid="uid://cfwq3jpugdq03" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_A.res" id="6_vh4hv"]
-[ext_resource type="Animation" uid="uid://c0ouw0gura8e6" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_A_001.res" id="7_3o0ws"]
-[ext_resource type="Animation" uid="uid://d31fjdwwjksn6" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Armature_001_Scene.res" id="8_fmhm8"]
-[ext_resource type="Animation" uid="uid://d2wnlxfme76c3" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Armature_001_Scene_001.res" id="9_iy6io"]
-[ext_resource type="Animation" uid="uid://cg0k1tl807nbg" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_CarringRunFalling.res" id="10_m4s0k"]
-[ext_resource type="Animation" uid="uid://bg3ntfy22pch0" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_CarringRunFalling_001.res" id="11_daomw"]
-[ext_resource type="Animation" uid="uid://cnmm81buii233" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_CarringRunJump_001.res" id="12_tvsd7"]
-[ext_resource type="Animation" uid="uid://b1ybo7pbenr17" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_CarringRunJump_002.res" id="13_kgjcx"]
-[ext_resource type="Animation" uid="uid://bhru2rwjeioc2" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_CarringRunJump_003.res" id="14_rutpv"]
-[ext_resource type="Animation" uid="uid://b3lqyadoj8ke" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_CarringRunJump_004.res" id="15_8qafu"]
-[ext_resource type="Animation" uid="uid://p4yy65fjf6ll" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_CarringRunJump_005.res" id="16_aj8y2"]
-[ext_resource type="Animation" uid="uid://d3ocvrffkh00s" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_CarringRunJump_006.res" id="17_hwb7i"]
-[ext_resource type="Animation" uid="uid://d4g6bag8u375h" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Jump_001.res" id="18_wbofp"]
-[ext_resource type="Animation" uid="uid://dio06mkij0aks" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Jump_002.res" id="19_cw0n7"]
-[ext_resource type="Animation" uid="uid://cgvylgbqf833s" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Jump_003.res" id="20_umslg"]
-[ext_resource type="Animation" uid="uid://b502pwc1kwvb5" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Jump_004.res" id="21_7cr4t"]
-[ext_resource type="Animation" uid="uid://db6fh74pqc8le" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Jump_005.res" id="22_uqfhh"]
-[ext_resource type="Animation" uid="uid://cmc835exjk5lf" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Jump_006.res" id="23_p4um2"]
-[ext_resource type="Animation" uid="uid://bky0a28y00rrm" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Pull.res" id="24_g6fmf"]
-[ext_resource type="Animation" uid="uid://bxbkvcmdslgcl" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Pull_001.res" id="25_j2j0s"]
-[ext_resource type="Animation" uid="uid://c4x51u7u1oxbw" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Push.res" id="26_ru1d5"]
-[ext_resource type="Animation" uid="uid://72b6jkha1ha4" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Push_001.res" id="27_i7pt8"]
-[ext_resource type="Animation" uid="uid://cowts6xkbaxq7" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_pIdle.res" id="28_2ukj6"]
-[ext_resource type="Animation" uid="uid://eq6sqkr56csb" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_pIdle_001.res" id="29_mhtdt"]
-[ext_resource type="Animation" uid="uid://8j8dsgcup1ns" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_runJump.res" id="30_ko4ab"]
-[ext_resource type="Animation" uid="uid://b4u6c5qttblv5" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_runJump_001.res" id="31_udtxe"]
-[ext_resource type="Animation" uid="uid://bwwv63dnrawv7" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_runJump_002.res" id="32_sulu0"]
-[ext_resource type="Animation" uid="uid://dq15sbdcthxo7" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_runJump_003.res" id="33_0ei1t"]
-[ext_resource type="Animation" uid="uid://cmy11y4g8jyig" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_runJump_004.res" id="34_fscws"]
-[ext_resource type="Animation" uid="uid://bd7a8wy364d2t" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_runJump_005.res" id="35_8fv2i"]
-[ext_resource type="Animation" uid="uid://d10gc3bxr4hpn" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_runJump_006.res" id="36_yp7tg"]
-[ext_resource type="Animation" uid="uid://bxyujbub03t0p" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_runJump_007.res" id="37_67dx3"]
-[ext_resource type="Animation" uid="uid://d2jkoc8o5g6mh" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_CarringRunFalling.res" id="38_3e1nh"]
-[ext_resource type="Animation" uid="uid://dlwpjqvo6r2rn" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_CarringRunJump_001.res" id="39_he34h"]
-[ext_resource type="Animation" uid="uid://88ub5auncgir" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_CarringRunJump_002.res" id="40_svaiy"]
-[ext_resource type="Animation" uid="uid://cai1hhwong22o" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_CarringRunJump_003.res" id="41_uvef1"]
-[ext_resource type="Animation" uid="uid://cfvofbhl6ivqp" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Jump_001.res" id="42_mq75u"]
-[ext_resource type="Animation" uid="uid://bdtl1rpeboqrs" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Jump_002.res" id="43_to8a1"]
-[ext_resource type="Animation" uid="uid://bqb57bpghj2uo" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Jump_003.res" id="44_0jt5v"]
-[ext_resource type="Animation" uid="uid://bygjp60r2sek5" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Pull.res" id="45_jif50"]
-[ext_resource type="Animation" uid="uid://djgotqvg8y1o7" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Push.res" id="46_w7wrd"]
-[ext_resource type="Animation" uid="uid://diky331cuycin" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_pIdle.res" id="47_fk5dw"]
-[ext_resource type="Animation" uid="uid://bp703r13d1naa" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_runJump.res" id="48_r2y4m"]
-[ext_resource type="Animation" uid="uid://cyt6nj6qnbj7m" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_runJump_001.res" id="49_c7my5"]
-[ext_resource type="Animation" uid="uid://3trrya6u62ly" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_runJump_002.res" id="50_dut5j"]
-[ext_resource type="Animation" uid="uid://ctc6uihrhfpym" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_runJump_003.res" id="51_7cmfi"]
+[ext_resource type="PackedScene" uid="uid://ct857o4budxsn" path="res://Prefabs/Player.tscn" id="2_6uoul"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm1ar"]
 resource_name = "MI_Grass"
@@ -131,107 +82,6 @@ data = PackedVector3Array(-35.190098, -36.350998, 8.8264, -41.2399, -31.5161, 8.
 background_mode = 2
 sky = SubResource("Sky_1tbnv")
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bqgcj"]
-_data = {
-&"Armature_Armature_A": ExtResource("4_e4nke"),
-&"Armature_Armature_Armature_001_Scene": ExtResource("5_37v2a"),
-&"Armature_Armature_Armature_A": ExtResource("6_vh4hv"),
-&"Armature_Armature_Armature_A_001": ExtResource("7_3o0ws"),
-&"Armature_Armature_Armature_Armature_001_Scene": ExtResource("8_fmhm8"),
-&"Armature_Armature_Armature_Armature_001_Scene_001": ExtResource("9_iy6io"),
-&"Armature_Armature_Armature_CarringRunFalling": ExtResource("10_m4s0k"),
-&"Armature_Armature_Armature_CarringRunFalling_001": ExtResource("11_daomw"),
-&"Armature_Armature_Armature_CarringRunJump_001": ExtResource("12_tvsd7"),
-&"Armature_Armature_Armature_CarringRunJump_002": ExtResource("13_kgjcx"),
-&"Armature_Armature_Armature_CarringRunJump_003": ExtResource("14_rutpv"),
-&"Armature_Armature_Armature_CarringRunJump_004": ExtResource("15_8qafu"),
-&"Armature_Armature_Armature_CarringRunJump_005": ExtResource("16_aj8y2"),
-&"Armature_Armature_Armature_CarringRunJump_006": ExtResource("17_hwb7i"),
-&"Armature_Armature_Armature_Jump_001": ExtResource("18_wbofp"),
-&"Armature_Armature_Armature_Jump_002": ExtResource("19_cw0n7"),
-&"Armature_Armature_Armature_Jump_003": ExtResource("20_umslg"),
-&"Armature_Armature_Armature_Jump_004": ExtResource("21_7cr4t"),
-&"Armature_Armature_Armature_Jump_005": ExtResource("22_uqfhh"),
-&"Armature_Armature_Armature_Jump_006": ExtResource("23_p4um2"),
-&"Armature_Armature_Armature_Pull": ExtResource("24_g6fmf"),
-&"Armature_Armature_Armature_Pull_001": ExtResource("25_j2j0s"),
-&"Armature_Armature_Armature_Push": ExtResource("26_ru1d5"),
-&"Armature_Armature_Armature_Push_001": ExtResource("27_i7pt8"),
-&"Armature_Armature_Armature_pIdle": ExtResource("28_2ukj6"),
-&"Armature_Armature_Armature_pIdle_001": ExtResource("29_mhtdt"),
-&"Armature_Armature_Armature_runJump": ExtResource("30_ko4ab"),
-&"Armature_Armature_Armature_runJump_001": ExtResource("31_udtxe"),
-&"Armature_Armature_Armature_runJump_002": ExtResource("32_sulu0"),
-&"Armature_Armature_Armature_runJump_003": ExtResource("33_0ei1t"),
-&"Armature_Armature_Armature_runJump_004": ExtResource("34_fscws"),
-&"Armature_Armature_Armature_runJump_005": ExtResource("35_8fv2i"),
-&"Armature_Armature_Armature_runJump_006": ExtResource("36_yp7tg"),
-&"Armature_Armature_Armature_runJump_007": ExtResource("37_67dx3"),
-&"Armature_Armature_CarringRunFalling": ExtResource("38_3e1nh"),
-&"Armature_Armature_CarringRunJump_001": ExtResource("39_he34h"),
-&"Armature_Armature_CarringRunJump_002": ExtResource("40_svaiy"),
-&"Armature_Armature_CarringRunJump_003": ExtResource("41_uvef1"),
-&"Armature_Armature_Jump_001": ExtResource("42_mq75u"),
-&"Armature_Armature_Jump_002": ExtResource("43_to8a1"),
-&"Armature_Armature_Jump_003": ExtResource("44_0jt5v"),
-&"Armature_Armature_Pull": ExtResource("45_jif50"),
-&"Armature_Armature_Push": ExtResource("46_w7wrd"),
-&"Armature_Armature_pIdle": ExtResource("47_fk5dw"),
-&"Armature_Armature_runJump": ExtResource("48_r2y4m"),
-&"Armature_Armature_runJump_001": ExtResource("49_c7my5"),
-&"Armature_Armature_runJump_002": ExtResource("50_dut5j"),
-&"Armature_Armature_runJump_003": ExtResource("51_7cmfi")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_37v2a"]
-animation = &"anims/Armature_Armature_Armature_CarringRunJump_006"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iaqw1"]
-animation = &"anims/Armature_Armature_pIdle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e4nke"]
-animation = &"anims/Armature_Armature_Jump_001"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pb5h2"]
-animation = &"anims/Armature_Armature_Armature_Push"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u4xhf"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_st7rm"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e4nke"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_37v2a"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vh4hv"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3o0ws"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fmhm8"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_nvotg"]
-states/Falling/node = SubResource("AnimationNodeAnimation_37v2a")
-states/Falling/position = Vector2(640, 233)
-states/Idle/node = SubResource("AnimationNodeAnimation_iaqw1")
-states/Idle/position = Vector2(456, 44)
-states/Jump/node = SubResource("AnimationNodeAnimation_e4nke")
-states/Jump/position = Vector2(727, 160)
-states/Start/position = Vector2(161, 114)
-states/Walk/node = SubResource("AnimationNodeAnimation_pb5h2")
-states/Walk/position = Vector2(423, 197)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_u4xhf"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_st7rm"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_e4nke"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_37v2a"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_vh4hv"), "Jump", "Falling", SubResource("AnimationNodeStateMachineTransition_3o0ws"), "Falling", "Idle", SubResource("AnimationNodeStateMachineTransition_fmhm8")]
-graph_offset = Vector2(50, 51)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1tbnv"]
-
 [node name="Node3D" type="Node3D" unique_id=1101474948]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1293145020]
@@ -254,32 +104,5 @@ transform = Transform3D(1, 0, 0, 0, -0.20021358, 0.97975236, 0, -0.97975236, -0.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2051030056]
 environment = SubResource("Environment_nvotg")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=911097318]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.084266, 0)
-script = ExtResource("1_6uoul")
-
-[node name="visuals" type="Node3D" parent="CharacterBody3D" unique_id=835060378]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-
-[node name="Aiden_SinGorro" parent="CharacterBody3D/visuals" unique_id=1811757919 instance=ExtResource("1_6mnrr")]
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="CharacterBody3D/visuals/Aiden_SinGorro" unique_id=1796648455]
-libraries/anims = SubResource("AnimationLibrary_bqgcj")
-
-[node name="AnimationTree" type="AnimationTree" parent="CharacterBody3D/visuals/Aiden_SinGorro" unique_id=699628787]
-tree_root = SubResource("AnimationNodeStateMachine_nvotg")
-anim_player = NodePath("../AnimationPlayer2")
-
-[node name="CameraPivot" type="Node3D" parent="CharacterBody3D" unique_id=956692028]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-
-[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D/CameraPivot" unique_id=786157439]
-transform = Transform3D(1, 6.3043077e-09, 2.2760815e-10, -6.3043077e-09, 0.99739647, 0.07211287, 2.2760815e-10, -0.07211287, 0.99739647, 0, 0.9986589, 0)
-spring_length = 4.01
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/CameraPivot/SpringArm3D" unique_id=358993815]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86805177, -1.171428)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1466874409]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.67183805, 0)
-shape = SubResource("CapsuleShape3D_1tbnv")
+[node name="CharacterBody3D" parent="." unique_id=348896476 instance=ExtResource("2_6uoul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6900553, -0.16881853, -5.533743)

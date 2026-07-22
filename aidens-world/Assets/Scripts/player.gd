@@ -9,77 +9,89 @@ extends CharacterBody3D
 var wants_to_jump: bool = false       # Input flag
 
 # Node References
+# Match these node names EXACTLY to your Scene Tree!
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var spring_arm: SpringArm3D = $CameraPivot/SpringArm3D
-@onready var visuals: Node3D = $Aiden
+@onready var visuals: Node3D = $Node3D/Aiden # Renamed to match your description
 
 # Animation references
-@onready var anim_tree: AnimationTree = $Aiden/AnimationTree
+@onready var anim_tree: AnimationTree = $Node3D/Aiden/AnimationTree
 @onready var anim_state = anim_tree.get("parameters/playback")
 
-# Get the gravity from the project settings so we aren't hardcoding it
-# (Unity: Physics.gravity.y)
+# Get default project gravity
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	# Tell the SpringArm3D to ignore colliding with the player itself
+	# Prevents camera from clipping into player's collision shape
 	spring_arm.add_excluded_object(get_rid())
 
 func _unhandled_input(event: InputEvent) -> void:
+	# Mouse Look Logic
 	if event is InputEventMouseMotion:
-		# Rotate the pivot horizontally (Left/Right)
 		camera_pivot.rotate_y(-event.relative.x * mouse_sensitivity)
-		# Rotate the spring arm vertically (Up/Down)
 		spring_arm.rotate_x(-event.relative.y * mouse_sensitivity)
-		# Clamp the camera boom angle so it doesn't flip upside down
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-60), deg_to_rad(30))
 		
-	if event.is_action_pressed("ui_jump"):
+	# Jump Input Catch
+	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_jump"):
 		wants_to_jump = true
 
-
 func _physics_process(delta: float) -> void:
-	# 1. Clean Gravity Handling
-	# If we are on the floor, we apply a tiny downward force to keep is_on_floor() stable,
-	# but we NEVER accumulate gravity. This stops the character from clipping into the floor.
+	# 1. Gravity Management
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
+		# Tiny downward force keeps is_on_floor() stable without clipping
 		velocity.y = -0.1 
-	
-	# 2. Get WASD Input Direction
+
+	# 2. Jump Handling (Calculated before movement)
+	if wants_to_jump:
+		if is_on_floor():
+			velocity.y = jump_velocity
+			if anim_state:
+				anim_state.travel("Jump")
+		# Reset flag immediately so we don't jump again automatically upon landing
+		wants_to_jump = false
+
+	# 3. WASD Movement Logic
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
-	# Calculate move direction relative to the Camera Pivot's Y rotation
+	# Calculate movement direction relative to camera rotation
 	var basis := camera_pivot.global_transform.basis
 	var direction := (basis.z * input_dir.y + basis.x * input_dir.x).normalized()
-	direction.y = 0 # Lock movement to the horizontal plane
+	direction.y = 0 # Keep movement purely horizontal
 
-	# 3. Apply Smooth Movement (Acceleration/Friction)
+	# 4. Movement Acceleration & Visual Rotation
 	if direction != Vector3.ZERO:
-		# Lerp horizontal velocity towards our target
 		velocity.x = move_toward(velocity.x, direction.x * speed, acceleration * delta)
 		velocity.z = move_toward(velocity.z, direction.z * speed, acceleration * delta)
 		
-		anim_state.travel("Run")
-		# 4. Rotate Player Visuals to face movement direction (Unity: Quaternion.LookRotation/Slerp)
-		# We interpolate (lerp_angle) the Y rotation to keep turning silky smooth.
+		# Rotate character visual mesh to face movement direction
 		var target_angle = atan2(-direction.x, -direction.z)
 		visuals.rotation.y = lerp_angle(visuals.rotation.y, target_angle, rotation_speed * delta)
 	else:
-		anim_state.travel("Idle")
-		velocity.x = 0
-		velocity.z = 0
-		
-	if wants_to_jump and is_on_floor():
-		# Always reset the input flag in the physics step so it doesn't float around
-		wants_to_jump = false
-		velocity.y = jump_velocity
-		#anim_state.travel("Jump")
+		# Smooth deceleration to zero
+		velocity.x = move_toward(velocity.x, 0, acceleration * delta)
+		velocity.z = move_toward(velocity.z, 0, acceleration * delta)
 
-	#if !is_on_floor():
-		#anim_state.travel("Falling")
+	# 5. Animation State Control (Grounded vs Air logic)
+	_update_animations(direction)
 
-	# 5. Move execution
+	# 6. Execute Physics Move
 	move_and_slide()
+
+# Clean helper function to keep _physics_process tidy
+func _update_animations(direction: Vector3) -> void:
+	if not anim_state:
+		return
+		
+	if is_on_floor():
+		if direction != Vector3.ZERO:
+			anim_state.travel("Run")
+		else:
+			anim_state.travel("Idle")
+	#else:
+		# Only switch to falling if we are actually moving downward in the air
+		#if velocity.y < 0:
+			#anim_state.travel("Falling")
