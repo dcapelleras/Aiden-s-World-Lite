@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cs3fqsdct0vbg" path="res://Assets/UI/Game Buttons/buttom_opcions.png" id="5_ymwpv"]
 [ext_resource type="Texture2D" uid="uid://b3xhv3w6oye0l" path="res://Assets/UI/Game Buttons/buttom_credits2.png" id="6_1o627"]
 [ext_resource type="Texture2D" uid="uid://bh6luogn2l75" path="res://Assets/UI/Game Buttons/buttom_sortida.png" id="7_2ey7y"]
+[ext_resource type="Texture2D" uid="uid://c8dov10iq2vko" path="res://Assets/UI/Ref_Layouts/ConfiguracioDeSo.png" id="8_vnflv"]
+[ext_resource type="Texture2D" uid="uid://c5xbjq8dxame0" path="res://Assets/UI/Game Buttons/visuals examples/5.jpg" id="9_ymwpv"]
 
 [node name="Node2D" type="Node2D" unique_id=1989789572]
 
@@ -75,11 +77,37 @@ layout_mode = 2
 icon = ExtResource("7_2ey7y")
 flat = true
 
-[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="CanvasLayer/Control" method="_on_Start_pressed"]
+[node name="MenuSettings" type="Control" parent="CanvasLayer" unique_id=1885790217]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuSettings" unique_id=28259465]
+layout_mode = 0
+offset_right = 1142.0
+offset_bottom = 643.0
+texture = ExtResource("8_vnflv")
+
+[node name="MenuCredits" type="Control" parent="CanvasLayer" unique_id=2025348019]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuCredits" unique_id=1996562888]
+layout_mode = 0
+offset_right = 1142.0
+offset_bottom = 643.0
+texture = ExtResource("9_ymwpv")
+
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="CanvasLayer/Control" method="_on_button_pressed"]
-[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Button2" to="CanvasLayer/Control" method="_on_Settings_down"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="CanvasLayer/Control" method="_on_Start_pressed"]
 [connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Button2" to="CanvasLayer/Control" method="_on_button_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Button2" to="CanvasLayer/Control" method="_on_Settings_down"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button3" to="CanvasLayer/Control" method="_on_button_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button3" to="CanvasLayer/Control" method="_on_Credits_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button4" to="CanvasLayer/Control" method="_on_Quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button4" to="CanvasLayer/Control" method="_on_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button4" to="CanvasLayer/Control" method="_on_Quit_pressed"]

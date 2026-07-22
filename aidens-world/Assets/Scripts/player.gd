@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 @export var jump_velocity: float = 4.5 # Initial upward force
 var wants_to_jump: bool = false       # Input flag
+var has_object: bool = false
 
 # Node References
 # Match these node names EXACTLY to your Scene Tree!
@@ -36,6 +37,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Jump Input Catch
 	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_jump"):
 		wants_to_jump = true
+		
+	if event.is_action_pressed("ui_interact") and !has_object:
+		has_object = true
+
+
 
 func _physics_process(delta: float) -> void:
 	# 1. Gravity Management

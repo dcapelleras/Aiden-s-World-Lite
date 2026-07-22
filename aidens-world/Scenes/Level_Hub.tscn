@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bwsd4sx8kdvfu" path="res://Assets/Building/M_Grass.tres" id="1_qlglt"]
 [ext_resource type="PackedScene" uid="uid://ct857o4budxsn" path="res://Prefabs/Player.tscn" id="2_6uoul"]
+[ext_resource type="PackedScene" uid="uid://d08m5y0ics8gj" path="res://Assets/Props/Garden Props/Bridge_Columns_Rocks/Bridge.fbx" id="3_qlglt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm1ar"]
 resource_name = "MI_Grass"
@@ -81,6 +82,9 @@ data = PackedVector3Array(-35.190098, -36.350998, 8.8264, -41.2399, -31.5161, 8.
 [sub_resource type="Environment" id="Environment_nvotg"]
 background_mode = 2
 sky = SubResource("Sky_1tbnv")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 0.9843137, 1)
+ambient_light_energy = 0.1
 
 [node name="Node3D" type="Node3D" unique_id=1101474948]
 
@@ -105,4 +109,7 @@ transform = Transform3D(1, 0, 0, 0, -0.20021358, 0.97975236, 0, -0.97975236, -0.
 environment = SubResource("Environment_nvotg")
 
 [node name="CharacterBody3D" parent="." unique_id=348896476 instance=ExtResource("2_6uoul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6900553, -0.16881853, -5.533743)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.402016, -1.5953393, 24.953703)
+
+[node name="Bridge" parent="." unique_id=562556528 instance=ExtResource("3_qlglt")]
+transform = Transform3D(-0.7931456, 0, -0.6090323, 0, 1, 0, 0.6090323, 0, -0.7931456, -26.359507, -7.5087748, 12.99483)
