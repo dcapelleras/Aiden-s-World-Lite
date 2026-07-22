@@ -1,6 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://da3yi1wysi4uw"]
-
-[ext_resource type="Texture2D" uid="uid://b6u2yfd6or11" path="res://Assets/Props/Characters/Aiden/Aiden_UV_BaseColor.png" id="1_67hcd"]
-
-[resource]
-albedo_texture = ExtResource("1_67hcd")

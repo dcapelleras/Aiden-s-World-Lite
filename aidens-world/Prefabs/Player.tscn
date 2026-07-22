@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://ct857o4budxsn"]
+
+[ext_resource type="PackedScene" uid="uid://uc4xfcbbu" path="res://Assets/Characters/Aiden/Aiden.glb" id="1_gntrk"]
+[ext_resource type="Animation" uid="uid://cj5lmtfgkk868" path="res://Assets/Characters/Aiden/Animations/Idle.res" id="2_dewec"]
+[ext_resource type="Animation" uid="uid://ctfwqj30byrfb" path="res://Assets/Characters/Aiden/Animations/Run.res" id="3_5ixxa"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nn08x"]
+_data = {
+&"Idle": ExtResource("2_dewec"),
+&"Run": ExtResource("3_5ixxa")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gntrk"]
+animation = &"Anims/Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dewec"]
+animation = &"Anims/Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5ixxa"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nn08x"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_52ee3"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bhhdu"]
+states/Idle/node = SubResource("AnimationNodeAnimation_gntrk")
+states/Idle/position = Vector2(361.19998, 31.200005)
+states/Run/node = SubResource("AnimationNodeAnimation_dewec")
+states/Run/position = Vector2(362, 138.4)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5ixxa"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_nn08x"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_52ee3")]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7j56s"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=348896476]
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=649366842]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1726435311]
+transform = Transform3D(1, 6.3043077e-09, 2.2760815e-10, -6.3043077e-09, 0.99739647, 0.07211287, 2.2760815e-10, -0.07211287, 0.99739647, 0, 0.9986589, 0)
+spring_length = 4.01
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=293011968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86805177, -1.171428)
+
+[node name="Aiden" parent="." unique_id=1007715906 instance=ExtResource("1_gntrk")]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Aiden" unique_id=1206006451]
+libraries/Anims = SubResource("AnimationLibrary_nn08x")
+
+[node name="AnimationTree" type="AnimationTree" parent="Aiden" unique_id=1019628300]
+tree_root = SubResource("AnimationNodeStateMachine_bhhdu")
+anim_player = NodePath("../AnimationPlayer2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2081135713]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.67183805, 0)
+shape = SubResource("CapsuleShape3D_7j56s")

@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://gxwln24d7ucv"]
-
-[ext_resource type="PackedScene" uid="uid://70aeddcq5g7q" path="res://Assets/Props/Characters/Aiden/Aiden_SinGorro.fbx" id="1_dnfmt"]
-
-[node name="Aiden_SinGorro" unique_id=1811757919 instance=ExtResource("1_dnfmt")]

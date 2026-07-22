@@ -11,10 +11,10 @@ var wants_to_jump: bool = false       # Input flag
 # Node References
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var spring_arm: SpringArm3D = $CameraPivot/SpringArm3D
-@onready var visuals: Node3D = $visuals/Aiden_SinGorro
+@onready var visuals: Node3D = $Aiden
 
 # Animation references
-@onready var anim_tree: AnimationTree = $visuals/Aiden_SinGorro/AnimationTree
+@onready var anim_tree: AnimationTree = $Aiden/AnimationTree
 @onready var anim_state = anim_tree.get("parameters/playback")
 
 # Get the gravity from the project settings so we aren't hardcoding it
@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, direction.x * speed, acceleration * delta)
 		velocity.z = move_toward(velocity.z, direction.z * speed, acceleration * delta)
 		
-		anim_state.travel("Walk")
+		anim_state.travel("Run")
 		# 4. Rotate Player Visuals to face movement direction (Unity: Quaternion.LookRotation/Slerp)
 		# We interpolate (lerp_angle) the Y rotation to keep turning silky smooth.
 		var target_angle = atan2(-direction.x, -direction.z)
@@ -76,10 +76,10 @@ func _physics_process(delta: float) -> void:
 		# Always reset the input flag in the physics step so it doesn't float around
 		wants_to_jump = false
 		velocity.y = jump_velocity
-		anim_state.travel("Jump")
+		#anim_state.travel("Jump")
 
-	if !is_on_floor():
-		anim_state.travel("Falling")
+	#if !is_on_floor():
+		#anim_state.travel("Falling")
 
 	# 5. Move execution
 	move_and_slide()
