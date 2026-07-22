@@ -27,7 +27,7 @@
 [ext_resource type="Animation" uid="uid://bxbkvcmdslgcl" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Pull_001.res" id="25_j2j0s"]
 [ext_resource type="Animation" uid="uid://c4x51u7u1oxbw" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Push.res" id="26_ru1d5"]
 [ext_resource type="Animation" uid="uid://72b6jkha1ha4" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_Push_001.res" id="27_i7pt8"]
-[ext_resource type="Animation" uid="uid://wwldpw43mhru" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_pIdle.res" id="28_2ukj6"]
+[ext_resource type="Animation" uid="uid://cowts6xkbaxq7" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_pIdle.res" id="28_2ukj6"]
 [ext_resource type="Animation" uid="uid://eq6sqkr56csb" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_pIdle_001.res" id="29_mhtdt"]
 [ext_resource type="Animation" uid="uid://8j8dsgcup1ns" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_runJump.res" id="30_ko4ab"]
 [ext_resource type="Animation" uid="uid://b4u6c5qttblv5" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Armature_runJump_001.res" id="31_udtxe"]
@@ -46,11 +46,24 @@
 [ext_resource type="Animation" uid="uid://bqb57bpghj2uo" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Jump_003.res" id="44_0jt5v"]
 [ext_resource type="Animation" uid="uid://bygjp60r2sek5" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Pull.res" id="45_jif50"]
 [ext_resource type="Animation" uid="uid://djgotqvg8y1o7" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_Push.res" id="46_w7wrd"]
-[ext_resource type="Animation" uid="uid://cboi8fabqaf6d" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_pIdle.res" id="47_fk5dw"]
+[ext_resource type="Animation" uid="uid://diky331cuycin" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_pIdle.res" id="47_fk5dw"]
 [ext_resource type="Animation" uid="uid://bp703r13d1naa" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_runJump.res" id="48_r2y4m"]
 [ext_resource type="Animation" uid="uid://cyt6nj6qnbj7m" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_runJump_001.res" id="49_c7my5"]
 [ext_resource type="Animation" uid="uid://3trrya6u62ly" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_runJump_002.res" id="50_dut5j"]
 [ext_resource type="Animation" uid="uid://ctc6uihrhfpym" path="res://Assets/Props/Characters/Aiden/Animations/Armature_Armature_runJump_003.res" id="51_7cmfi"]
+[ext_resource type="PackedScene" uid="uid://dy6x6ixoiwkep" path="res://Assets/Props/Garden Props/Decoration Statues/Statue.fbx" id="52_hwb7i"]
+[ext_resource type="PackedScene" uid="uid://duxrmksruhkbr" path="res://Assets/Props/Garden Props/Fences/Fence.fbx" id="53_wbofp"]
+[ext_resource type="PackedScene" uid="uid://bodh2vo75phnx" path="res://Assets/Props/Garden Props/Fences/FenceBroken01.fbx" id="54_cw0n7"]
+[ext_resource type="PackedScene" uid="uid://bano2it6jf45s" path="res://Assets/Props/Garden Props/Fences/FenceBroken02.fbx" id="55_umslg"]
+[ext_resource type="PackedScene" uid="uid://cd12id4d5lfe" path="res://Assets/Props/Garden Props/Fences/FenceBroken03.fbx" id="56_7cr4t"]
+[ext_resource type="PackedScene" uid="uid://dkdql6yh7xl4s" path="res://Assets/Props/Garden Props/Masks/Mask.fbx" id="57_uqfhh"]
+[ext_resource type="PackedScene" uid="uid://donv6tj4s4qqv" path="res://Assets/Props/Garden Props/Plane/Plane.fbx" id="58_p4um2"]
+[ext_resource type="PackedScene" uid="uid://rodyxei6dbtu" path="res://Assets/Props/Garden Props/Vegetation/Bush1.fbx" id="59_g6fmf"]
+[ext_resource type="PackedScene" uid="uid://gjq38waob0d4" path="res://Assets/Props/Garden Props/Vegetation/Bush2.fbx" id="60_j2j0s"]
+[ext_resource type="PackedScene" uid="uid://ddra5nragu7q" path="res://Assets/Props/Garden Props/Vegetation/Palmtree1.fbx" id="61_ru1d5"]
+[ext_resource type="PackedScene" uid="uid://bnnah45wr3nxt" path="res://Assets/Props/Garden Props/Vegetation/Palmtree2.fbx" id="62_i7pt8"]
+[ext_resource type="PackedScene" uid="uid://cwh67oc7w7nr6" path="res://Assets/Props/Garden Props/Vegetation/Palmtree3.fbx" id="63_2ukj6"]
+[ext_resource type="PackedScene" uid="uid://d1dspxq52gmay" path="res://Assets/Props/Garden Props/Wall/Wall_Texture.fbx" id="64_mhtdt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm1ar"]
 resource_name = "MI_Grass"
@@ -283,3 +296,114 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86805177, -1.171428)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1466874409]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.67183805, 0)
 shape = SubResource("CapsuleShape3D_1tbnv")
+
+[node name="Statue" parent="." unique_id=557882376 instance=ExtResource("52_hwb7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1964326, -0.016745642, -5.003605)
+
+[node name="Statue2" parent="." unique_id=1992274059 instance=ExtResource("52_hwb7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9709568, -0.016745642, -5.003605)
+
+[node name="Statue3" parent="." unique_id=291363185 instance=ExtResource("52_hwb7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16041565, -0.016745642, -5.003605)
+
+[node name="Statue4" parent="." unique_id=90968457 instance=ExtResource("52_hwb7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7291417, -0.016745642, -5.003605)
+
+[node name="Fence" parent="." unique_id=434745614 instance=ExtResource("53_wbofp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7680917, -0.080942154, 7.3062205)
+
+[node name="FenceBroken01" parent="." unique_id=949513311 instance=ExtResource("54_cw0n7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.506063, -0.080942154, 7.3062205)
+
+[node name="FenceBroken02" parent="." unique_id=1042156601 instance=ExtResource("55_umslg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4769635, -0.080942154, 7.3062205)
+
+[node name="FenceBroken03" parent="." unique_id=717003568 instance=ExtResource("56_7cr4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.911736, -0.080942154, 7.3062205)
+
+[node name="Mask" parent="." unique_id=887253708 instance=ExtResource("57_uqfhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0466745, 0.4473859, 9.697649)
+
+[node name="Mask2" parent="." unique_id=1883334951 instance=ExtResource("57_uqfhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9941275, 0.4473859, 9.697649)
+
+[node name="Mask3" parent="." unique_id=871874147 instance=ExtResource("57_uqfhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6727593, 0.4473859, 9.697649)
+
+[node name="Mask4" parent="." unique_id=396610183 instance=ExtResource("57_uqfhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.995493, 0.4473859, 9.697649)
+
+[node name="Plane" parent="." unique_id=819057738 instance=ExtResource("58_p4um2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28832483, 0.9311755, 4.6321096)
+
+[node name="Plane2" parent="." unique_id=423219547 instance=ExtResource("58_p4um2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2655706, 0.9311755, 4.6321096)
+
+[node name="Plane3" parent="." unique_id=899849772 instance=ExtResource("58_p4um2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.364899, 0.9311755, 4.6321096)
+
+[node name="Plane4" parent="." unique_id=2108133046 instance=ExtResource("58_p4um2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.790423, 0.9311755, 4.6321096)
+
+[node name="Bush1" parent="." unique_id=464105241 instance=ExtResource("59_g6fmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1819596, -1.0201559, 4.7364264)
+
+[node name="Bush2" parent="." unique_id=1419077843 instance=ExtResource("59_g6fmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.851733, -1.0201559, 4.7364264)
+
+[node name="Bush3" parent="." unique_id=1937815271 instance=ExtResource("59_g6fmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8331304, -1.0201559, 4.7364264)
+
+[node name="Bush4" parent="." unique_id=1211922967 instance=ExtResource("59_g6fmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.362818, -1.0201559, 4.7364264)
+
+[node name="Bush5" parent="." unique_id=275163007 instance=ExtResource("60_j2j0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9739646, -0.07181825, 13.776185)
+
+[node name="Bush6" parent="." unique_id=392313334 instance=ExtResource("60_j2j0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.154068, -0.07181825, 13.776185)
+
+[node name="Bush7" parent="." unique_id=194939587 instance=ExtResource("60_j2j0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5830984, -0.07181825, 13.776185)
+
+[node name="Bush8" parent="." unique_id=2032564437 instance=ExtResource("60_j2j0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7823505, -0.07181825, 13.776185)
+
+[node name="Palmtree1" parent="." unique_id=103964478 instance=ExtResource("61_ru1d5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8503404, -0.0677302, 16.488678)
+
+[node name="Palmtree2" parent="." unique_id=1394872722 instance=ExtResource("61_ru1d5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.940082, -0.0677302, 16.488678)
+
+[node name="Palmtree3" parent="." unique_id=1294719503 instance=ExtResource("61_ru1d5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.940082, -0.0677302, 16.488678)
+
+[node name="Palmtree4" parent="." unique_id=1546788330 instance=ExtResource("61_ru1d5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5846, -0.0677302, 16.488678)
+
+[node name="Palmtree5" parent="." unique_id=2079281320 instance=ExtResource("62_i7pt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.068911, -1.746953, 8.8250675)
+
+[node name="Palmtree6" parent="." unique_id=948519150 instance=ExtResource("62_i7pt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0293865, -1.746953, 8.8250675)
+
+[node name="Palmtree7" parent="." unique_id=157396243 instance=ExtResource("62_i7pt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7412066, -1.746953, 8.8250675)
+
+[node name="Palmtree8" parent="." unique_id=561903689 instance=ExtResource("62_i7pt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.585102, -1.746953, 8.8250675)
+
+[node name="Palmtree9" parent="." unique_id=312505137 instance=ExtResource("63_2ukj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.411238, -1.7469547, 13.252676)
+
+[node name="Palmtree10" parent="." unique_id=160188212 instance=ExtResource("63_2ukj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.086168, -1.7469547, 13.252676)
+
+[node name="Palmtree11" parent="." unique_id=39141286 instance=ExtResource("63_2ukj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7657146, -1.7469547, 13.252676)
+
+[node name="Palmtree12" parent="." unique_id=242369965 instance=ExtResource("63_2ukj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7657146, -1.7469547, 13.252676)
+
+[node name="Wall_Texture" parent="." unique_id=2123518151 instance=ExtResource("64_mhtdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.264345, -0.08032931, -26.063442)
