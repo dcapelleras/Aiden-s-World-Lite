@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://by3dovrxmubm4"]
+
+[ext_resource type="Texture2D" uid="uid://bm8l25jcqlmhc" path="res://Assets/UI/Game Buttons/fondo_menu.png" id="1_rmbjf"]
+[ext_resource type="Texture2D" uid="uid://dqj5ew1yfrmag" path="res://Assets/UI/Logo/aiden_logo_conborde.png" id="2_b7rmo"]
+
+[node name="Node2D" type="Node2D" unique_id=1989789572]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1436682322]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1796523503]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=954316229]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.075
+anchor_top = -0.125
+anchor_right = 28.900002
+anchor_bottom = 16.375
+texture = ExtResource("1_rmbjf")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control" unique_id=219079146]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 11.575001
+anchor_top = 1.0
+anchor_right = 26.580002
+anchor_bottom = 5.466
+offset_left = 36.99997
+offset_top = -25.0
+offset_right = -9.200073
+offset_bottom = 60.36
+texture = ExtResource("2_b7rmo")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=249446099]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 10.875001
+anchor_top = 6.484
+anchor_right = 27.277
+anchor_bottom = 15.005001
+offset_left = 190.99997
+offset_top = 58.639984
+offset_right = -185.08008
+offset_bottom = -79.20007
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=472271675]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=657722622]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=1692036149]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=1844003448]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+horizontal_alignment = 1
