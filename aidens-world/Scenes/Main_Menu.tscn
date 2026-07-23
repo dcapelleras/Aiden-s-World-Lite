@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cs3fqsdct0vbg" path="res://Assets/UI/Game Buttons/buttom_opcions.png" id="5_ymwpv"]
 [ext_resource type="Texture2D" uid="uid://b3xhv3w6oye0l" path="res://Assets/UI/Game Buttons/buttom_credits2.png" id="6_1o627"]
 [ext_resource type="Texture2D" uid="uid://bh6luogn2l75" path="res://Assets/UI/Game Buttons/buttom_sortida.png" id="7_2ey7y"]
-[ext_resource type="Texture2D" uid="uid://c8dov10iq2vko" path="res://Assets/UI/Ref_Layouts/ConfiguracioDeSo.png" id="8_vnflv"]
+[ext_resource type="Texture2D" uid="uid://dt7plmg3ddefr" path="res://Assets/UI/Game Buttons/visuals examples/4.jpg" id="8_ymwpv"]
 [ext_resource type="Texture2D" uid="uid://c5xbjq8dxame0" path="res://Assets/UI/Game Buttons/visuals examples/5.jpg" id="9_ymwpv"]
 
 [node name="Node2D" type="Node2D" unique_id=1989789572]
@@ -88,7 +88,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 1142.0
 offset_bottom = 643.0
-texture = ExtResource("8_vnflv")
+texture = ExtResource("8_ymwpv")
 
 [node name="MenuCredits" type="Control" parent="CanvasLayer" unique_id=2025348019]
 visible = false
