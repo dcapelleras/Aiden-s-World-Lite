@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dpoywtbbukfvh"]
+
+[ext_resource type="PackedScene" uid="uid://c2n4et8rnd8we" path="res://Assets/Building/MansionBuilding.tscn" id="2_hxca2"]
+[ext_resource type="PackedScene" uid="uid://ct857o4budxsn" path="res://Prefabs/Player.tscn" id="2_svvn3"]
+
+[sub_resource type="Sky" id="Sky_1tbnv"]
+
+[sub_resource type="Environment" id="Environment_nvotg"]
+background_mode = 2
+sky = SubResource("Sky_1tbnv")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 0.9843137, 1)
+ambient_light_energy = 0.1
+
+[node name="Node3D" type="Node3D" unique_id=1101474948]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2126992825]
+transform = Transform3D(1, 0, 0, 0, -0.20021358, 0.97975236, 0, -0.97975236, -0.20021358, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2051030056]
+environment = SubResource("Environment_nvotg")
+
+[node name="CharacterBody3D" parent="." unique_id=348896476 instance=ExtResource("2_svvn3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.485147, -0.8212112, 3.0013466)
+
+[node name="StaticBody3D" parent="." unique_id=149236362 instance=ExtResource("2_hxca2")]

@@ -99,5 +99,5 @@ func _update_animations(direction: Vector3) -> void:
 			anim_state.travel("Idle")
 	#else:
 		# Only switch to falling if we are actually moving downward in the air
-		if velocity.y < 0:
-			anim_state.travel("Falling")
+		#if velocity.y < 0:
+			#anim_state.travel("Falling")
