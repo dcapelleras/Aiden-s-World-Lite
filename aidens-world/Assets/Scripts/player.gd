@@ -35,7 +35,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-60), deg_to_rad(30))
 		
 	# Jump Input Catch
-	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_jump"):
+	if event.is_action_pressed("ui_jump"):
 		wants_to_jump = true
 		
 	if event.is_action_pressed("ui_interact") and !has_object:
@@ -44,6 +44,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
+	print (is_on_floor())
 	# 1. Gravity Management
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -55,10 +57,9 @@ func _physics_process(delta: float) -> void:
 	if wants_to_jump:
 		if is_on_floor():
 			velocity.y = jump_velocity
-			if anim_state:
-				anim_state.travel("Jump")
 		# Reset flag immediately so we don't jump again automatically upon landing
 		wants_to_jump = false
+		anim_state.travel("Jump")
 
 	# 3. WASD Movement Logic
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -82,10 +83,13 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, acceleration * delta)
 
 	# 5. Animation State Control (Grounded vs Air logic)
-	_update_animations(direction)
 
 	# 6. Execute Physics Move
 	move_and_slide()
+
+	_update_animations(direction)
+
+
 
 # Clean helper function to keep _physics_process tidy
 func _update_animations(direction: Vector3) -> void:
@@ -97,7 +101,7 @@ func _update_animations(direction: Vector3) -> void:
 			anim_state.travel("Run")
 		else:
 			anim_state.travel("Idle")
-	#else:
+	else:
 		# Only switch to falling if we are actually moving downward in the air
-		#if velocity.y < 0:
-			#anim_state.travel("Falling")
+		if not is_on_floor() and velocity.y < -0.1:
+			anim_state.travel("Fall")
