@@ -105,3 +105,20 @@ func _update_animations(direction: Vector3) -> void:
 		# Only switch to falling if we are actually moving downward in the air
 		if not is_on_floor() and velocity.y < -0.1:
 			anim_state.travel("Fall")
+
+
+func _try_pickup() -> void:
+	if has_object:
+		_drop_object()
+		
+	else:
+		_pick_object()
+	pass
+	
+func _drop_object() -> void:
+	has_object = false
+	pass
+	
+func _pick_object() -> void:
+	has_object = true
+	pass
