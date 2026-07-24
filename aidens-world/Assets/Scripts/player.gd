@@ -8,12 +8,14 @@ extends CharacterBody3D
 @export var jump_velocity: float = 4.5 # Initial upward force
 var wants_to_jump: bool = false       # Input flag
 var has_object: bool = false
+var held_object: Node3D = null
 
 # Node References
 # Match these node names EXACTLY to your Scene Tree!
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var spring_arm: SpringArm3D = $CameraPivot/SpringArm3D
 @onready var visuals: Node3D = $Node3D/Aiden # Renamed to match your description
+@onready var pickupPos : BoneAttachment3D = $Node3D/Aiden/Armature/Skeleton3D/BoneAttachment3D
 
 # Animation references
 @onready var anim_tree: AnimationTree = $Node3D/Aiden/AnimationTree
@@ -105,20 +107,23 @@ func _update_animations(direction: Vector3) -> void:
 		# Only switch to falling if we are actually moving downward in the air
 		if not is_on_floor() and velocity.y < -0.1:
 			anim_state.travel("Fall")
-
-
-func _try_pickup() -> void:
+			
+func _try_pickup(obj : Node3D) -> void:
 	if has_object:
 		_drop_object()
 		
 	else:
-		_pick_object()
+		_pick_object(obj)
 	pass
 	
 func _drop_object() -> void:
+	pickupPos.remove_child(pickupPos)
 	has_object = false
+	held_object = null
 	pass
 	
-func _pick_object() -> void:
+func _pick_object(obj : Node3D) -> void:
 	has_object = true
+	held_object = obj
+	held_object.reparent(pickupPos)
 	pass
