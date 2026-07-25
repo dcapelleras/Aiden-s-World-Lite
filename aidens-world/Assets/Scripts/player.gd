@@ -16,6 +16,7 @@ var held_object: Node3D = null
 @onready var spring_arm: SpringArm3D = $CameraPivot/SpringArm3D
 @onready var visuals: Node3D = $Node3D/Aiden # Renamed to match your description
 @onready var pickupPos : BoneAttachment3D = $Node3D/Aiden/Armature/Skeleton3D/BoneAttachment3D
+@onready var pickArea : Area3D = $Area3D
 
 # Animation references
 @onready var anim_tree: AnimationTree = $Node3D/Aiden/AnimationTree
@@ -41,13 +42,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		wants_to_jump = true
 		
 	if event.is_action_pressed("ui_interact") and !has_object:
-		has_object = true
+		_try_pickup()
 
 
 
 func _physics_process(delta: float) -> void:
 	
-	print (is_on_floor())
 	# 1. Gravity Management
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -108,22 +108,38 @@ func _update_animations(direction: Vector3) -> void:
 		if not is_on_floor() and velocity.y < -0.1:
 			anim_state.travel("Fall")
 			
-func _try_pickup(obj : Node3D) -> void:
+func _try_pickup() -> void:
+	print("trypickup")
 	if has_object:
 		_drop_object()
-		
 	else:
-		_pick_object(obj)
+		_pick_object()
 	pass
 	
 func _drop_object() -> void:
+	print("drop")
 	pickupPos.remove_child(pickupPos)
 	has_object = false
 	held_object = null
 	pass
 	
-func _pick_object(obj : Node3D) -> void:
+func _pick_object() -> void:
+	print("pick")
+	var bodies = pickArea.get_overlapping_bodies()
+	var closest_body: RigidBody3D = null
+	var min_distance: float = INF
+	
+	# Find the closest pickable object in range
+	for body in bodies:
+		if body is RigidBody3D and body.is_in_group("Pickable"):
+			var dist = global_position.distance_to(body.global_position)
+			if dist < min_distance:
+				min_distance = dist
+				closest_body = body
+				
+	if closest_body != null:
+		held_object = closest_body
+		held_object.gravity_scale = 0.0
+		held_object.linear_damp = 10.0
 	has_object = true
-	held_object = obj
-	held_object.reparent(pickupPos)
-	pass
+	print(held_object)

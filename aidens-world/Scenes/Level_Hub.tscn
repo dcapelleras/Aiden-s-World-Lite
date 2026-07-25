@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bwsd4sx8kdvfu" path="res://Assets/Building/M_Grass.tres" id="1_qlglt"]
 [ext_resource type="PackedScene" uid="uid://ct857o4budxsn" path="res://Prefabs/Player.tscn" id="2_6uoul"]
+[ext_resource type="PackedScene" uid="uid://x5c5m80855b8" path="res://Prefabs/Pickable.tscn" id="3_qlglt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm1ar"]
 resource_name = "MI_Grass"
@@ -166,3 +167,6 @@ mesh = SubResource("ArrayMesh_8wbu2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge/StaticBody3D" unique_id=1457148485]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_6uoul")
+
+[node name="Node3D" parent="." unique_id=1596486711 instance=ExtResource("3_qlglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.801064, -1.1552389, 20.366343)
