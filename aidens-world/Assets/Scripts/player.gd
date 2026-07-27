@@ -15,8 +15,9 @@ var held_object: Node3D = null
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var spring_arm: SpringArm3D = $CameraPivot/SpringArm3D
 @onready var visuals: Node3D = $Node3D/Aiden # Renamed to match your description
-@onready var pickupPos : BoneAttachment3D = $Node3D/Aiden/Armature/Skeleton3D/BoneAttachment3D
+@onready var pickupPos : Node3D = $Node3D/Aiden/Armature/Skeleton3D/BoneAttachment3D/pickPos
 @onready var pickArea : Area3D = $Area3D
+@onready var level_node = get_tree().current_scene
 
 # Animation references
 @onready var anim_tree: AnimationTree = $Node3D/Aiden/AnimationTree
@@ -41,7 +42,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_jump"):
 		wants_to_jump = true
 		
-	if event.is_action_pressed("ui_interact") and !has_object:
+	if event.is_action_pressed("ui_interact"):
 		_try_pickup()
 
 
@@ -118,20 +119,19 @@ func _try_pickup() -> void:
 	
 func _drop_object() -> void:
 	print("drop")
-	pickupPos.remove_child(pickupPos)
+	held_object.reparent(level_node)
 	has_object = false
 	held_object = null
 	pass
 	
 func _pick_object() -> void:
-	print("pick")
 	var bodies = pickArea.get_overlapping_bodies()
 	var closest_body: RigidBody3D = null
 	var min_distance: float = INF
 	
 	# Find the closest pickable object in range
 	for body in bodies:
-		if body is RigidBody3D and body.is_in_group("Pickable"):
+		if body.is_in_group("Pickable"):
 			var dist = global_position.distance_to(body.global_position)
 			if dist < min_distance:
 				min_distance = dist
@@ -141,5 +141,9 @@ func _pick_object() -> void:
 		held_object = closest_body
 		held_object.gravity_scale = 0.0
 		held_object.linear_damp = 10.0
-	has_object = true
-	print(held_object)
+		has_object = true
+		var shape = held_object.get_node("CollisionShape3D")
+		shape.set_deferred("disabled", false)
+		held_object.reparent(pickupPos)
+		held_object.transform = Transform3D.IDENTITY
+		print(held_object)
