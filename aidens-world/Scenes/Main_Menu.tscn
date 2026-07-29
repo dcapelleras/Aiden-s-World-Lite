@@ -103,11 +103,11 @@ offset_right = 1142.0
 offset_bottom = 643.0
 texture = ExtResource("9_ymwpv")
 
-[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="CanvasLayer/Control" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="CanvasLayer/Control" method="_on_Start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="CanvasLayer/Control" method="_on_button_pressed"]
 [connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Button2" to="CanvasLayer/Control" method="_on_button_2_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Button2" to="CanvasLayer/Control" method="_on_Settings_down"]
-[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button3" to="CanvasLayer/Control" method="_on_button_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button3" to="CanvasLayer/Control" method="_on_Credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button3" to="CanvasLayer/Control" method="_on_button_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button4" to="CanvasLayer/Control" method="_on_button_4_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button4" to="CanvasLayer/Control" method="_on_Quit_pressed"]
