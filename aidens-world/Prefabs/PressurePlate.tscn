@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bgtvlxqx38ewh"]
+
+[ext_resource type="Script" uid="uid://6h62dar13atr" path="res://Prefabs/pressure_plate.gd" id="1_upa1r"]
+[ext_resource type="PackedScene" uid="uid://ps5fl66yci5m" path="res://Assets/Props/Mansion Props/Pressure Plates/Small_PressurePlate.fbx" id="2_fst8g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7auac"]
+
+[node name="PressurePlate" type="Node3D" unique_id=494684671]
+script = ExtResource("1_upa1r")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1434759140]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1393700388]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.29654092, 0)
+shape = SubResource("BoxShape3D_7auac")
+
+[node name="Small_PressurePlate" parent="." unique_id=1039953097 instance=ExtResource("2_fst8g")]
