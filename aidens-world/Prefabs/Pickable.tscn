@@ -5,11 +5,13 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_n2dtg"]
 
 [node name="Rigidbody3D" type="RigidBody3D" unique_id=841201047 groups=["Pickable"]]
+freeze = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=611243835]
 mesh = SubResource("BoxMesh_nvotg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=594328397]
+transform = Transform3D(1.0277876, 0, 0, 0, 1, 0, 0, 0, 1.015435, 0.0021627378, 0.009462953, 0.004199911)
 shape = SubResource("BoxShape3D_n2dtg")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1347296066]

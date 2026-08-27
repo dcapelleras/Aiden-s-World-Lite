@@ -96,7 +96,7 @@ func _physics_process(delta: float) -> void:
 
 # Clean helper function to keep _physics_process tidy
 func _update_animations(direction: Vector3) -> void:
-	if not anim_state:
+	if not anim_state:#
 		return
 		
 	if is_on_floor():
@@ -119,6 +119,7 @@ func _try_pickup() -> void:
 	
 func _drop_object() -> void:
 	print("drop")
+	held_object.global_rotation = self.global_rotation
 	held_object.reparent(level_node)
 	has_object = false
 	held_object = null
