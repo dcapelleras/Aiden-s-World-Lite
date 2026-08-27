@@ -161,7 +161,7 @@ transform = Transform3D(1, 0, 0, 0, -0.20021358, 0.97975236, 0, -0.97975236, -0.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2051030056]
 environment = SubResource("Environment_nvotg")
 
-[node name="CharacterBody3D" parent="." unique_id=348896476 groups=["player"] instance=ExtResource("2_6uoul")]
+[node name="Player" parent="." unique_id=348896476 groups=["player"] instance=ExtResource("2_6uoul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.402016, -1.5953393, 24.953703)
 
 [node name="Bridge" type="Node3D" parent="." unique_id=562556528]

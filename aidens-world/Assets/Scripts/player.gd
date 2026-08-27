@@ -157,18 +157,23 @@ func _pick_object() -> void:
 		
 func _reduce_calmness() -> void:
 	var tween: Tween = create_tween()
-	tween.tween_method(_on_variable_interpolated, calmness, calmness - calmPenalty, 2.0)
+	var clampedValue = clampf(calmness - calmPenalty, 0, 100)
+	tween.tween_method(_on_variable_interpolated, calmness, clampedValue, 2.0)
 	tween.set_trans(Tween.TRANS_SINE)
-	tween.set_ease(Tween.EASE_OUT)
 	if calmness <= 0:
-		calmness = 0
+		tween.kill()
 		_death()
+	tween.set_ease(Tween.EASE_OUT)
 		
 func _increase_calmness() -> void:
 	var tween: Tween = create_tween()
 	tween.tween_method(_on_variable_interpolated, calmness, 100.0, 2.0)
 	tween.set_trans(Tween.TRANS_SINE)
+	if calmness >= 100:
+		calmness = 100
+		tween.kill()
 	tween.set_ease(Tween.EASE_OUT)
+	
 
 func _on_variable_interpolated(current_value: float) -> void:
 	calmness = current_value
@@ -176,5 +181,7 @@ func _on_variable_interpolated(current_value: float) -> void:
 		
 func _death() -> void:
 	print("death")
+	calmness = 0
 	await get_tree().create_timer(3.0).timeout
 	print("revived")
+	calmness = 50
