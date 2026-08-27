@@ -4,6 +4,9 @@ extends CharacterBody3D
 @export var acceleration: float = 15.0 # Smooths out movement start/stop
 @export var rotation_speed: float = 10.0 # How fast the character turns
 @export var mouse_sensitivity: float = 0.003
+var calmness: float = 100
+@export var initialCalmness: float = 50
+@export var calmPenalty: float = 30
 
 @export var jump_velocity: float = 4.5 # Initial upward force
 var wants_to_jump: bool = false       # Input flag
@@ -30,6 +33,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	# Prevents camera from clipping into player's collision shape
 	spring_arm.add_excluded_object(get_rid())
+	calmness = initialCalmness
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse Look Logic
@@ -123,12 +127,14 @@ func _drop_object() -> void:
 	held_object.reparent(level_node)
 	has_object = false
 	held_object = null
+	_increase_calmness()
 	pass
 	
 func _pick_object() -> void:
 	var bodies = pickArea.get_overlapping_bodies()
 	var closest_body: RigidBody3D = null
 	var min_distance: float = INF
+	_reduce_calmness()
 	
 	# Find the closest pickable object in range
 	for body in bodies:
@@ -148,3 +154,27 @@ func _pick_object() -> void:
 		held_object.reparent(pickupPos)
 		held_object.transform = Transform3D.IDENTITY
 		print(held_object)
+		
+func _reduce_calmness() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_method(_on_variable_interpolated, calmness, calmness - calmPenalty, 2.0)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
+	if calmness <= 0:
+		calmness = 0
+		_death()
+		
+func _increase_calmness() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_method(_on_variable_interpolated, calmness, 100.0, 2.0)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
+
+func _on_variable_interpolated(current_value: float) -> void:
+	calmness = current_value
+	print("Variable updated to: ", calmness)
+		
+func _death() -> void:
+	print("death")
+	await get_tree().create_timer(3.0).timeout
+	print("revived")
