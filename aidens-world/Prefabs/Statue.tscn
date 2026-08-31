@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://38laxnne68dx"]
 
-[node name="Node3D" type="Node3D" unique_id=435498944]
+[ext_resource type="Script" uid="uid://m7ruoi7gjpqx" path="res://Prefabs/statue.gd" id="1_xw3mu"]
+
+[node name="Node3D" type="Node3D" unique_id=435498944 groups=["Puzzle"]]
+script = ExtResource("1_xw3mu")

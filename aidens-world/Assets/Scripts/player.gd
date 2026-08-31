@@ -116,10 +116,39 @@ func _update_animations(direction: Vector3) -> void:
 func _try_pickup() -> void:
 	print("trypickup")
 	if has_object:
-		_drop_object()
+		var puzzle = _get_nearby_puzzle()
+		if puzzle:
+			_interact_with_puzzle(puzzle)
+		elif _can_drop():
+			_drop_object()
+		else:
+			print("Can't drop here — something's in the way")
 	else:
 		_pick_object()
-	pass
+
+func _get_nearby_puzzle() -> Node:
+	# Check both bodies and areas, in case your puzzle uses either
+	for body in pickArea.get_overlapping_bodies():
+		if body.is_in_group("Puzzle"):
+			return body
+	for area in pickArea.get_overlapping_areas():
+		if area.is_in_group("Puzzle"):
+			return area
+	return null
+	
+func _interact_with_puzzle(puzzle: Node) -> void:
+	print("interacting with puzzle: ", puzzle.name)
+	if puzzle.has_method("solve"):
+		puzzle.solve(held_object)
+
+func _can_drop() -> bool:
+	var space_state := get_world_3d().direct_space_state
+	var from := global_position + Vector3.UP * 1.0
+	var to := from + (-global_transform.basis.z) * 1.5 # 1.5m in front of player
+	var query := PhysicsRayQueryParameters3D.create(from, to)
+	query.exclude = [self, held_object]
+	var result := space_state.intersect_ray(query)
+	return result.is_empty()
 	
 func _drop_object() -> void:
 	print("drop")

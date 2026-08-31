@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://x5c5m80855b8"]
 
+[ext_resource type="Script" uid="uid://khjjvqsvm367" path="res://Prefabs/pickable.gd" id="1_ysm8f"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_nvotg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n2dtg"]
 
 [node name="Rigidbody3D" type="RigidBody3D" unique_id=841201047 groups=["Pickable"]]
 freeze = true
+script = ExtResource("1_ysm8f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=611243835]
 mesh = SubResource("BoxMesh_nvotg")
