@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cjj0of3sfpij6"]
+
+[ext_resource type="Script" uid="uid://tafkp8ggv2he" path="res://Assets/Scripts/Statue_Solver.gd" id="1_lagt1"]
+
+[node name="Node3D" type="Node3D" unique_id=796195883]
+script = ExtResource("1_lagt1")
