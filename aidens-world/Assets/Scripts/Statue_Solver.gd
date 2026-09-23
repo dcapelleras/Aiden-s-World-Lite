@@ -1,12 +1,10 @@
 extends Node3D
 
-@onready var statues: Array[Node]
+var statues: int = 0
+@export var statuesToSolve: int = 6
+var solved: bool = false
 
-		
-func _ready() -> void:
-	statues = get_tree().get_nodes_in_group("Statues")
-
-
-func _check_puzzle():
-	for piece in statues:
-		
+func _check_puzzle(solved):
+	statues ++ 1
+	if statues == statuesToSolve:
+		solved = true

@@ -1,6 +1,7 @@
 extends Node3D
 
 var _solved: bool = false
+@export var solver : Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,4 +14,5 @@ func _process(delta: float) -> void:
 
 func _solve() -> void:
 	_solved = true
+	solver._check_puzzle.emit(_solved)
 	pass
