@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene format=3 uid="uid://ferluoqc7kw6"]
 
-[ext_resource type="Script" path="res://levels/level_base.gd" id="1_lvl"]
+[ext_resource type="Script" uid="uid://bjprgni11j1tv" path="res://levels/level_base.gd" id="1_lvl"]
 [ext_resource type="PackedScene" path="res://player/player.tscn" id="2_pl"]
-[ext_resource type="Script" path="res://objects/pickable.gd" id="3_pk"]
-[ext_resource type="Script" path="res://objects/pushable_rock.gd" id="4_rk"]
+[ext_resource type="Script" uid="uid://d3jfbuxmcq11m" path="res://objects/pickable.gd" id="3_pk"]
+[ext_resource type="Script" uid="uid://birdhtnmthh1u" path="res://objects/pushable_rock.gd" id="4_rk"]
 
 [sub_resource type="BoxShape3D" id="floor_shape"]
 size = Vector3(40, 1, 40)
@@ -21,51 +21,51 @@ size = Vector3(1.5, 1.5, 1.5)
 [sub_resource type="BoxMesh" id="rock_mesh"]
 size = Vector3(1.5, 1.5, 1.5)
 
-[node name="Level" type="Node3D"]
+[node name="Level" type="Node3D" unique_id=968967867]
 script = ExtResource("1_lvl")
 
-[node name="Floor" type="StaticBody3D" parent="."]
-position = Vector3(0, -0.5, 0)
+[node name="Floor" type="StaticBody3D" parent="." unique_id=724571227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1717341254]
 shape = SubResource("floor_shape")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=387867763]
 mesh = SubResource("floor_mesh")
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
-rotation = Vector3(-0.8, 0.5, 0)
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1064650184]
+transform = Transform3D(0.87758255, -0.34391883, 0.334019, 0, 0.6967067, 0.7173561, -0.47942555, -0.6295392, 0.61141765, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("2_pl")]
-position = Vector3(0, 0.05, 6)
+[node name="Player" parent="." unique_id=2112961932 instance=ExtResource("2_pl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 6)
 
-[node name="Box1" type="RigidBody3D" parent="."]
-position = Vector3(2, 0.5, 2)
+[node name="Box1" type="RigidBody3D" parent="." unique_id=1946825568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 2)
 script = ExtResource("3_pk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Box1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box1" unique_id=1141352433]
 shape = SubResource("box_shape")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Box1"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box1" unique_id=1370192564]
 mesh = SubResource("box_mesh")
 
-[node name="Box2" type="RigidBody3D" parent="."]
-position = Vector3(-2, 0.5, 2)
+[node name="Box2" type="RigidBody3D" parent="." unique_id=697650496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 2)
 script = ExtResource("3_pk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Box2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box2" unique_id=430825875]
 shape = SubResource("box_shape")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Box2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box2" unique_id=244415505]
 mesh = SubResource("box_mesh")
 
-[node name="Rock" type="CharacterBody3D" parent="."]
-position = Vector3(0, 0.75, -3)
+[node name="Rock" type="CharacterBody3D" parent="." unique_id=1804257290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -3)
 script = ExtResource("4_rk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock" unique_id=598861143]
 shape = SubResource("rock_shape")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Rock"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rock" unique_id=1169043800]
 mesh = SubResource("rock_mesh")

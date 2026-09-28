@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameData="*uid://debjy70jpocpn"
-Settings="*uid://dbjrwmpstpqnn"
-GameState="*uid://dlfn325ylhdee"
-Journal="*uid://d1k60eyroxnw4"
+GameData="*uid://hnwbkl7pm6jy"
+GameState="*uid://bb8873o62hnac"
+Journal="*uid://ddo8mdn33mbs1"
+Settings="*uid://bb0bm76xyk8k4"
 
 [display]
 
