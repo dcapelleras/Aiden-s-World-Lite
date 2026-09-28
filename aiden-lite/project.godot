@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="Aiden_Lite"
+run/main_scene="res://ui/main_menu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameData="*uid://debjy70jpocpn"
+Settings="*uid://dbjrwmpstpqnn"
+GameState="*uid://dlfn325ylhdee"
+Journal="*uid://d1k60eyroxnw4"
 
 [display]
 

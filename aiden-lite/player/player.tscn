@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_pl"]
+
+[sub_resource type="CapsuleShape3D" id="shape_body"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="mesh_body"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="BoxMesh" id="mesh_nose"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="shape_interact"]
+size = Vector3(1.6, 1.6, 1.6)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_pl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.9, 0)
+shape = SubResource("shape_body")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Placeholder" type="MeshInstance3D" parent="Model"]
+position = Vector3(0, 0.9, 0)
+mesh = SubResource("mesh_body")
+
+[node name="Nose" type="MeshInstance3D" parent="Model"]
+position = Vector3(0, 1.5, -0.4)
+mesh = SubResource("mesh_nose")
+
+[node name="HoldPoint" type="Marker3D" parent="Model"]
+position = Vector3(0, 1.1, -0.9)
+
+[node name="InteractArea" type="Area3D" parent="Model"]
+position = Vector3(0, 1, -0.9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/InteractArea"]
+shape = SubResource("shape_interact")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+spring_length = 5.0
+margin = 0.3
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]

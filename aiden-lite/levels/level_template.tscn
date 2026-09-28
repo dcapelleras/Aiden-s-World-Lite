@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://levels/level_base.gd" id="1_lvl"]
+[ext_resource type="PackedScene" path="res://player/player.tscn" id="2_pl"]
+[ext_resource type="Script" path="res://objects/pickable.gd" id="3_pk"]
+[ext_resource type="Script" path="res://objects/pushable_rock.gd" id="4_rk"]
+
+[sub_resource type="BoxShape3D" id="floor_shape"]
+size = Vector3(40, 1, 40)
+
+[sub_resource type="BoxMesh" id="floor_mesh"]
+size = Vector3(40, 1, 40)
+
+[sub_resource type="BoxShape3D" id="box_shape"]
+
+[sub_resource type="BoxMesh" id="box_mesh"]
+
+[sub_resource type="BoxShape3D" id="rock_shape"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="BoxMesh" id="rock_mesh"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_lvl")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("floor_shape")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("floor_mesh")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation = Vector3(-0.8, 0.5, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_pl")]
+position = Vector3(0, 0.05, 6)
+
+[node name="Box1" type="RigidBody3D" parent="."]
+position = Vector3(2, 0.5, 2)
+script = ExtResource("3_pk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box1"]
+shape = SubResource("box_shape")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box1"]
+mesh = SubResource("box_mesh")
+
+[node name="Box2" type="RigidBody3D" parent="."]
+position = Vector3(-2, 0.5, 2)
+script = ExtResource("3_pk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box2"]
+shape = SubResource("box_shape")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box2"]
+mesh = SubResource("box_mesh")
+
+[node name="Rock" type="CharacterBody3D" parent="."]
+position = Vector3(0, 0.75, -3)
+script = ExtResource("4_rk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock"]
+shape = SubResource("rock_shape")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rock"]
+mesh = SubResource("rock_mesh")
