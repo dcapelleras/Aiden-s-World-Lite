@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pci0apxpsnyx"
+path="res://.godot/imported/Drawer sound.mp3-32d851227b86c8bd76e60b02d7de9670.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/New sounds/Drawer sound.mp3"
+dest_files=["res://.godot/imported/Drawer sound.mp3-32d851227b86c8bd76e60b02d7de9670.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

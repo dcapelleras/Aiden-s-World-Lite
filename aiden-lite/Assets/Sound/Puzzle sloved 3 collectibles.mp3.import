@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://die5s8do5a2wf"
+path="res://.godot/imported/Puzzle sloved 3 collectibles.mp3-070c70c24363c0095da70aacf6024316.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Puzzle sloved 3 collectibles.mp3"
+dest_files=["res://.godot/imported/Puzzle sloved 3 collectibles.mp3-070c70c24363c0095da70aacf6024316.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

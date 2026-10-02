@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dob6rc4dxj0i4"
+path="res://.godot/imported/Placing objects (puzzle) 1.mp3-b87a64ad785a89b0e7b4ca3f71960586.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Placing objects (puzzle) 1.mp3"
+dest_files=["res://.godot/imported/Placing objects (puzzle) 1.mp3-b87a64ad785a89b0e7b4ca3f71960586.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
