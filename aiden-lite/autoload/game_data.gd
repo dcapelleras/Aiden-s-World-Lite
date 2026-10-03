@@ -21,15 +21,15 @@ const INTRO_CINEMATIC := "res://cinematics/cinematic_1.tscn"
 # "map_pos" is the position of the level button on the 2D map (in pixels).
 const LEVELS := [
 	{
-		"id": "level_1",
-		"name": "Level 1",
+		"id": "hub",
+		"name": "Hub",
 		"scene": "res://levels/level_1.tscn",
 		"map_pos": Vector2(220, 480),
 		"cinematic_after": "res://cinematics/cinematic_2.tscn",
 	},
 	{
-		"id": "level_2",
-		"name": "Level 2",
+		"id": "mansion",
+		"name": "Mansion",
 		"scene": "res://levels/level_2.tscn",
 		"map_pos": Vector2(560, 300),
 		"cinematic_after": "res://cinematics/cinematic_3.tscn",
@@ -38,23 +38,42 @@ const LEVELS := [
 
 # --- Collectibles (journal entries). "text" supports BBCode. "icon" is an optional texture path. ---
 const COLLECTIBLES := [
-	{ "id": "note_1", "title": "A torn letter", "text": "Write the entry text here.\n\nSupports [b]BBCode[/b].", "icon": "" },
-	{ "id": "note_2", "title": "The old key", "text": "Second entry text.", "icon": "" },
-	{ "id": "note_3", "title": "Faded photograph", "text": "Third entry text.", "icon": "" },
+	{ "id": "note_1", "title": "Coleccionable1", "text": "La primera història de l'Aiden.", "icon": "res://Assets/UI/Collectible Medals/Medal_1.png" },
+	{ "id": "note_2", "title": "Coleccionable2", "text": "La segona història de l'Aiden.", "icon": "res://Assets/UI/Collectible Medals/Medal_2.png" },
+	{ "id": "note_3", "title": "Coleccionable3", "text": "La tercera història de l'Aiden.", "icon": "res://Assets/UI/Collectible Medals/Medal_3.png" },
+	{ "id": "note_4", "title": "Coleccionable4", "text": "La quarta història de l'Aiden.", "icon": "res://Assets/UI/Collectible Medals/Medal_4.png" },
+	{ "id": "note_5", "title": "Coleccionable5", "text": "La cinquena història de l'Aiden.", "icon": "res://Assets/UI/Collectible Medals/Medal_5.png" },
+	{ "id": "note_6", "title": "Coleccionable6", "text": "La sisena història de l'Aiden.", "icon": "res://Assets/UI/Collectible Medals/Medal_6.png" },
+	{ "id": "note_7", "title": "Coleccionable7", "text": "La setena història de l'Aiden.", "icon": "res://Assets/UI/Collectible Medals/Medal_7.png" },
+	{ "id": "note_8", "title": "Coleccionable8", "text": "La vuitena història de l'Aiden.", "icon": "res://Assets/UI/Collectible Medals/Medal_8.png" },
+	{ "id": "note_9", "title": "Coleccionable9", "text": "La novena història de l'Aiden.", "icon": "res://Assets/UI/Collectible Medals/Medal_9.png" },
+	{ "id": "note_10", "title": "Coleccionable10", "text": "La desena història de l'Aiden.", "icon": "res://Assets/UI/Collectible Medals/Medal_10.png" },
 ]
 
 # Lines starting with "# " are headers.
 const CREDITS := [
-	"# MY GAME",
+	"# AIDEN'S WORLD",
 	"",
-	"# Design & Story",
-	"Your name",
+	"# Direcció del projecte",
+	"Noms varis",
 	"",
-	"# Programming",
-	"Your name",
+	"# Leads",
+	"Noms varis",
 	"",
-	"# Music",
-	"Composer name",
+	"# Disseny",
+	"Noms varis",
 	"",
-	"Thanks for playing!",
+	"# Narrativa",
+	"Noms varis",
+	"",
+	"# Art",
+	"Noms varis",
+	"",
+	"# Programació",
+	"Noms varis",
+	"",
+	"# Música",
+	"Noms varis",
+	"",
+	"Gràcies per jugar!",
 ]
