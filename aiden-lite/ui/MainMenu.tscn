@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cdbrf1hsa3ynr"]
 
+[ext_resource type="Script" uid="uid://blombj0fradv5" path="res://ui/main_menu.gd" id="1_8v85u"]
 [ext_resource type="Texture2D" uid="uid://bm8l25jcqlmhc" path="res://Assets/UI/Game Buttons/fondo_menu.png" id="1_nmrkx"]
 [ext_resource type="Texture2D" uid="uid://dqj5ew1yfrmag" path="res://Assets/UI/Logo/aiden_logo_conborde.png" id="2_8v85u"]
 [ext_resource type="Texture2D" uid="uid://el8id7heqfor" path="res://Assets/UI/Game Buttons/boton.png" id="3_x262b"]
@@ -13,6 +14,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_8v85u")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=1066844701]
 layout_mode = 1
@@ -144,3 +146,9 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="CanvasLayer/Control" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button2" to="CanvasLayer/Control" method="_on_button_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button3" to="CanvasLayer/Control" method="_on_button_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button4" to="CanvasLayer/Control" method="_on_button_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button5" to="CanvasLayer/Control" method="_on_button_quit_pressed"]

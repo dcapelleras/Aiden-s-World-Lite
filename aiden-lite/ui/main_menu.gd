@@ -14,27 +14,27 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().paused = false
 
-	var center := CenterContainer.new()
-	add_child(center)
-	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	var vb := VBoxContainer.new()
-	vb.add_theme_constant_override("separation", 12)
-	vb.custom_minimum_size = Vector2(280, 0)
-	center.add_child(vb)
+	#var center := CenterContainer.new()
+	#add_child(center)
+	#center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	#var vb := VBoxContainer.new()
+	#vb.add_theme_constant_override("separation", 12)
+	#vb.custom_minimum_size = Vector2(280, 0)
+	#center.add_child(vb)
 
-	var title := Label.new()
-	title.text = menu_title if menu_title != "" else str(ProjectSettings.get_setting("application/config/name"))
-	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.add_theme_font_size_override("font_size", 48)
-	vb.add_child(title)
+	#var title := Label.new()
+	#title.text = menu_title if menu_title != "" else str(ProjectSettings.get_setting("application/config/name"))
+	#title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	#title.add_theme_font_size_override("font_size", 48)
+	#vb.add_child(title)
 
-	var first := _add_button(vb, "New Game", _on_new_game)
-	var cont := _add_button(vb, "Continue", _on_continue)
-	cont.disabled = not GameState.has_save()
-	_add_button(vb, "Options", _on_options)
-	_add_button(vb, "Credits", _on_credits)
-	_add_button(vb, "Exit Game", _on_exit)
-	first.grab_focus()
+	#var first := _add_button(vb, "New Game", _on_new_game)
+	#var cont := _add_button(vb, "Continue", _on_continue)
+	#cont.disabled = not GameState.has_save()
+	#_add_button(vb, "Options", _on_options)
+	#_add_button(vb, "Credits", _on_credits)
+	#_add_button(vb, "Exit Game", _on_exit)
+	#first.grab_focus()
 
 	_confirm = ConfirmationDialog.new()
 	_confirm.dialog_text = "Start a new game?\nAll progress and collectibles will be erased."
@@ -80,3 +80,24 @@ func _on_credits() -> void:
 
 func _on_exit() -> void:
 	get_tree().quit()
+
+
+#new game
+func _on_button_pressed() -> void:
+	_on_new_game()
+
+
+func _on_button_continue_pressed() -> void:
+	_on_continue()
+
+
+func _on_button_settings_pressed() -> void:
+	_on_options()
+
+
+func _on_button_credits_pressed() -> void:
+	_on_credits()
+
+
+func _on_button_quit_pressed() -> void:
+	_on_exit()
